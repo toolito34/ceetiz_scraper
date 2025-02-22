@@ -1,5 +1,5 @@
 import psycopg2
-from psycopg2 import sql
+from psycopg2.extras import RealDictCursor
 
 # Configuration de la base de données
 DB_CONFIG = {

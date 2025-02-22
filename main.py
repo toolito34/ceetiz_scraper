@@ -9,7 +9,7 @@ app = FastAPI()
 DB_CONFIG = {
     "dbname": "ceetiz_db",
     "user": "postgres",
-    "password": "your_password",
+    "password": "passpass",
     "host": "localhost",
     "port": "5432"
 }
@@ -35,6 +35,7 @@ async def create_activity(activity: Activity):
     conn.commit()
     cursor.close()
     conn.close()
+    app.logger.info(f"Activité insérée: {activity}")
     return {"message": "Activity created successfully"}
 
 @app.get("/activities/")
